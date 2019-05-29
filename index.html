@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/index.css">
+    
+    <title>threeJS app</title>
+</head>
+<body>
+    <div class="content">
+        <div class="content-controller">
+            <input type="text" name="canvas_width" id="canvas_width">
+            <input type="text" name="canvas_height" id="canvas_height">
+            <button accesskey="Enter" onclick="setCanvasResolution()">Change</button>
+        </div>
+        <div class="content-canvas">
+            <canvas id="artifactCanvas" width="800" height="600"></canvas>
+        </div>
+    </div>
+</body>
+<script src="./js/three.min.js"></script>
+<script src="./js/OrbitControls.js"></script>
+<script src="./js/canvasScene.js"></script>
+<script src="./js/index.js"></script>
+</html>
