@@ -13,7 +13,9 @@
         <div class="content-controller">
             <input type="text" name="canvas_width" id="canvas_width">
             <input type="text" name="canvas_height" id="canvas_height">
-            <button accesskey="Enter" onclick="setCanvasResolution()">Change</button>
+            <button onclick="setCanvasResolution()">Change</button>
+            <button onclick="addCube()">Add cube</button>
+            <button onclick="removeCube()">Remove cube</button>
         </div>
         <div class="content-canvas">
             <canvas id="artifactCanvas" width="800" height="600"></canvas>

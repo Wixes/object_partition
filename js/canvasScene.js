@@ -1,5 +1,5 @@
 var scene, camera, renderer, controls;
-var spotlight;
+var ambientLight_1, spotlight_1;
 
 scene = new THREE.Scene();
 scene.background = new THREE.Color({color: 0x00ff00});
@@ -20,6 +20,7 @@ var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
 
 //LIGHT
 spotlight_1 = new THREE.SpotLight(0xffffff);
+ambientLight_1 = new THREE.AmbientLight(0x404040);
 
 // CONTROLLER
 controls = new THREE.OrbitControls( camera, renderer.domElement );
@@ -32,12 +33,20 @@ controls.enableDamping = true;
 controls.dampingFactor = 0.2;
 
 // OBJECT POSITIONS
-cube.position.set(0, 0, 0);
 spotlight_1.position.set(-3, 5, -3);
+cube.position.set(0, 0, 0);
 
 // ADD OBJECTS
-scene.add(cube);
 scene.add(spotlight_1);
+scene.add(ambientLight_1);
+scene.add(cube);
+
+scene.updateMatrixWorld(true);
+
+// TEST
+var pos = new THREE.Vector3();
+pos.setFromMatrixPosition(cube.matrixWorld);
+console.log(pos.x, pos.y, pos.z);
 
 function animate() {
 
