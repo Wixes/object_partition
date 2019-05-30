@@ -61,7 +61,7 @@ function addCube() {
             depth_3 = depth_2;
 
             // Create position for 2nd cube
-            position_2.x = position_1.x + (width_1 / 2) + (width_2 / 2) + 15;
+            position_2.x = position_1.x;
             position_2.y = position_1.y + (height_1 / 2) - (height_2 / 2);
             position_2.z = position_1.z;
 
@@ -84,7 +84,7 @@ function addCube() {
             depth_3 = depth_2;
             
             // Create position for 2nd cube
-            position_2.x = position_1.x + (width_1 / 2) + (width_2 / 2) + 15;
+            position_2.x = position_1.x - (width_1 / 2) + (width_2 / 2);
             position_2.y = position_1.y;
             position_2.z = position_1.z;
 
@@ -106,7 +106,7 @@ function addCube() {
             depth_3 = depth_1 - depth_2;
 
             // Create position for 2nd cube
-            position_2.x = position_1.x + (width_1 / 2) + (width_2 / 2) + 15;
+            position_2.x = position_1.x;
             position_2.y = position_1.y;
             position_2.z = position_1.z - (depth_1 / 2) + (depth_2 / 2);
 
@@ -117,6 +117,8 @@ function addCube() {
 
         }
 
+        // DELETE OLD CUBE
+        scene.remove(allChildren[3]);
         // CREATE NEW CUBES
         // cube 2
         var cubeGeometry_2 = new THREE.CubeGeometry(width_2, height_2, depth_2);
