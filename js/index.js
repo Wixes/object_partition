@@ -119,6 +119,7 @@ function addCube() {
 
         // DELETE OLD CUBE
         scene.remove(allChildren[3]);
+
         // CREATE NEW CUBES
         // cube 2
         var cubeGeometry_2 = new THREE.CubeGeometry(width_2, height_2, depth_2);
@@ -137,12 +138,9 @@ function addCube() {
         scene.add(cube_3);
 
     }
-    // For any of last two created cubes
     else {
-        width_1 = 100;
-        height_1 = 100;
+        alert("Удалите для начала блок!");
     }
-
     
     // NUMBER OF OBJECTS
     console.log ("all objects: " + allChildren.length);
